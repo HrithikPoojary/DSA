@@ -14,11 +14,22 @@ class LinkedList:
         self.length = 1
 
     def print_node(self):
-
         temp = self.head 
         while temp is not None:
             print(temp.value)
             temp = temp.next 
 
-l = LinkedList(5)
+    def append(self,value):
+        append_node = Node(value)
+        if self.head is None:
+            self.head = append_node
+            self.tail = append_node
+        else:
+            self.tail.next = append_node
+            self.tail = append_node
+        self.length += 1
+
+l = LinkedList(4)
+l.append(2)
+l.append(3)
 l.print_node()
